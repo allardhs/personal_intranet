@@ -1,0 +1,29 @@
+[
+    {
+        "Smart Home": [
+            {
+                "Weer": [
+                    {
+                        "icon": "WEER_ICON",
+                        "splash_pic": "WEER_PIC",
+                        "items": [
+                            {
+                                "Weer": [
+                                    {
+                                        "link": "https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-72927/Norge/Oslo/Oslo/Bygd%C3%B8y",
+                                        "icon": "yr",
+                                        "title": "WEER_TITLE",
+                                        "subtitle": "WEER_SUBTITLE"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Crypto": []
+            }
+        ]
+	}
+]

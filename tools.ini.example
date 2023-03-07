@@ -1,0 +1,37 @@
+friendly_name = "Tools"
+order = 4
+
+[contacts]
+
+friendly_name = Contacten
+icon = envelope
+splash_pic = contact
+
+roundcube[friendly_name] = Roundcube
+roundcube[link] = http://192.168.178.5:81/
+roundcube[icon] = roundcube
+roundcube[title] = Roundcube
+
+[docker]
+
+friendly_name = Dockertools
+icon = screwdriver-wrench
+splash_pic = tools
+
+portainer_nuc[friendly_name] = Portainer
+portainer_nuc[link] = http://192.168.178.5:9000/
+portainer_nuc[icon] = portainer
+portainer_nuc[title] = Portainer
+portainer_nuc[subtitle] = op de NUC
+
+[bookmarks]
+
+friendly_name = Bookmarks
+icon = bookmark
+splash_pic = bookmarks
+
+bookmarks[friendly_name] = Bookmarks
+bookmarks[link] = bookmarks.php
+bookmarks[icon] = bookmarks
+bookmarks[title] = Bookmarks
+bookmarks[subtitle] = BOOKMARKS_LAST_SYNC

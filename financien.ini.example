@@ -1,0 +1,48 @@
+friendly_name = "Financiën"
+order = 3
+
+[portfolio]
+
+friendly_name = Portfolio
+icon = piggy-bank
+splash_pic = bank_portfolio
+
+portfolio_status[friendly_name] = Portfolio
+portfolio_status[link] = bankrekeningen.php
+portfolio_status[icon] = banken
+portfolio_status[title] = Portfolio
+portfolio_status[subtitle] = BANK_BALANCE
+portfolio_status[subtitle_obfuscation] = True
+
+stocks_status[friendly_name] = Investeringen
+;stocks_status[link] = bankrekeningen.php
+stocks_status[icon] = investmentportfolio
+stocks_status[title] = Investeringen
+;stocks_status[subtitle] = INVESTMENTS_BALANCE
+;stocks_status[subtitle_obfuscation] = True
+
+[aandelen]
+
+friendly_name = Aandelen-analyse
+icon = arrow-trend-up
+splash_pic = stockanalysis
+
+bankX[friendly_name] = BankX
+bankX[link] = https://www.mybankx.nl/login
+bankX[icon] = bankx
+bankX[title] = "BankX"
+bankX[subtitle] = BANKX_BALANCE
+bankX[subtitle_obfuscation] = True
+
+[aandelenbrokers]
+
+friendly_name = Aandelenbrokers
+icon = money-bill-trend-up
+splash_pic = stockexchange
+
+brokerX[friendly_name] = BrokerX
+brokerX[link] = https://www.brokerX.nl/
+brokerX[icon] = brokerx
+brokerX[title] = "BrokerX"
+brokerX[subtitle] = BROKERX_BALANCE
+brokerX[subtitle_obfuscation] = True

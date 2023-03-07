@@ -1,0 +1,127 @@
+friendly_name = "Crypto"
+order = 2
+
+[portfolio]
+
+friendly_name = Crypto portfolio
+icon = bitcoin-sign
+splash_pic = crypto
+
+portfolio_status[friendly_name] = Cryptostatus
+portfolio_status[link] = portfolio.php
+portfolio_status[icon] = bitcoin
+portfolio_status[title] = Cryptostatus
+portfolio_status[subtitle] = CRYPTO_PORTFOLIO_BALANCE
+portfolio_status[subtitle_obfuscation] = True
+
+presearch[friendly_name] = Presearch
+presearch[link] = presearch.php
+presearch[icon] = presearch
+presearch[title] = Presearch
+presearch[subtitle] = PRESEARCH_BALANCE
+presearch[subtitle_obfuscation] = True
+
+[analysis]
+
+friendly_name = Crypto-analyse
+icon = ranking-star
+splash_pic = cryptoanalysis
+
+sentiment[friendly_name] = Sentiment monitor
+sentiment[link] = sentiment/sentiment.php
+sentiment[icon] = sentiment
+sentiment[title] = Sentiment monitor
+sentiment[subtitle] = SENTIMENT_SCORE
+
+s2f[friendly_name] = S2F Model
+s2f[link] = sentiment/s2f.php
+s2f[icon] = s2f
+s2f[title] = S2F Model
+
+rainbow_charts[friendly_name] = Rainbow Charts
+rainbow_charts[link] = sentiment/rainbow.php
+rainbow_charts[icon] = rainbowcharts
+rainbow_charts[title] = Rainbow Charts
+
+[exchanges]
+
+friendly_name = Cryptobeurzen
+icon = cash-register
+splash_pic = cryptoexchange
+
+coinbase[friendly_name] = Coinbase
+coinbase[link] = https://www.coinbase.com/
+coinbase[icon] = coinbase
+coinbase[title] = Coinbase
+coinbase[subtitle] = COINBASE_BALANCE
+coinbase[subtitle_obfuscation] = True
+
+crypto_com[friendly_name] = Crypto.com
+;crypto_com[link] = https://www.coinbase.com/
+crypto_com[icon] = cryptocom
+crypto_com[title] = Crypto.com
+crypto_com[subtitle] = CRYPTO_COM_BALANCE
+crypto_com[subtitle_obfuscation] = True
+
+crypto_com_wallet[friendly_name] = Crypto.com Wallet
+;crypto_com_wallet[link] = https://www.coinbase.com/
+crypto_com_wallet[icon] = cryptocomwallet
+crypto_com_wallet[title] = Crypto.com Wallet
+crypto_com_wallet[subtitle] = CRYPTO_COM_WALLET_BALANCE
+crypto_com_wallet[subtitle_obfuscation] = True
+
+crypto_com_exchange[friendly_name] = Crypto.com Exchange
+crypto_com_exchange[link] = https://www.crypto.com/
+crypto_com_exchange[icon] = cryptocomexchange
+crypto_com_exchange[title] = Crypto.com Exchange
+crypto_com_exchange[subtitle] = CRYPTO_COM_EXCHANGE_BALANCE
+crypto_com_exchange[subtitle_obfuscation] = True
+
+kraken[friendly_name] = Kraken
+kraken[link] = https://www.kraken.com/
+kraken[icon] = kraken
+kraken[title] = Kraken
+kraken[subtitle] = KRAKEN_BALANCE
+kraken[subtitle_obfuscation] = True
+
+bitpanda[friendly_name] = Bitpanda
+bitpanda[link] = https://web.bitpanda.com/home
+bitpanda[icon] = bitpanda
+bitpanda[title] = Bitpanda
+bitpanda[subtitle] = BITPANDA_BALANCE
+bitpanda[subtitle_obfuscation] = True
+
+bitpanda_exchange[friendly_name] = Bitpanda Exchange
+bitpanda_exchange[link] = https://exchange.bitpanda.com/
+bitpanda_exchange[icon] = bitpandaexchange
+bitpanda_exchange[title] = Bitpanda Exchange
+bitpanda_exchange[subtitle] = BITPANDA_EXCHANGE_BALANCE
+bitpanda_exchange[subtitle_obfuscation] = True
+
+binance[friendly_name] = Binance
+binance[link] = https://www.binance.com/en
+binance[icon] = binance
+binance[title] = Binance
+binance[subtitle] = BINANCE_BALANCE
+binance[subtitle_obfuscation] = True
+
+gate_io[friendly_name] = Gate.io
+gate_io[link] = https://www.gate.io/
+gate_io[icon] = gateio
+gate_io[title] = Gate.io
+gate_io[subtitle] = GATE_IO_BALANCE
+gate_io[subtitle_obfuscation] = True
+
+lykke[friendly_name] = Lykke
+lykke[link] = https://lykke.com/
+lykke[icon] = lykke
+lykke[title] = Lykke
+lykke[subtitle] = LYKKE_BALANCE
+lykke[subtitle_obfuscation] = True
+
+whitebit[friendly_name] = Whitebit
+whitebit[link] = https://whitebit.com/
+whitebit[icon] = whitebit
+whitebit[title] = Whitebit
+whitebit[subtitle] = WHITEBIT_BALANCE
+whitebit[subtitle_obfuscation] = True

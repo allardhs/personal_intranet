@@ -1,0 +1,68 @@
+friendly_name = "Smart Home"
+order = 1
+
+[weer]
+
+friendly_name = Weer
+icon = WEER_ICON
+splash_pic = WEER_PIC
+
+weer[friendly_name] = Weer
+weer[link] = https://www.yr.no/nb/v%C3%A6rvarsel/daglig-tabell/1-72927/Norge/Oslo/Oslo/Bygd%C3%B8y
+weer[icon] = yr
+weer[title] = WEER_TITLE
+weer[subtitle] = WEER_SUBTITLE
+
+homewiz[friendly_name] = Home Wizard
+homewiz[link] = home/homewizard.php
+homewiz[icon] = homewizard
+homewiz[title] = HomeWizard sensoren
+;homewiz[subtitle] = 
+
+[home_assistant]
+
+friendly_name = Home Assistant
+icon = house-signal
+splash_pic = homeassistant
+
+hass[friendly_name] = Home Assistant
+hass[link] = http://192.168.178.102:8123/
+hass[icon] = homeassistant
+hass[title] = Home Assistant
+hass[subtitle] = HASS_VERSION
+
+[webcams]
+
+friendly_name = Webcams
+icon = camera-web
+splash_pic = webcams
+
+webcams[friendly_name] = Webcams
+webcams[link] = webcams.php
+webcams[icon] = webcams
+webcams[title] = Webcams
+;webcams[subtitle] = 
+
+[electronica]
+
+friendly_name = Electronica
+icon = server
+splash_pic = electronica
+
+synods218plus[friendly_name] = Syno DS 218+
+synods218plus[link] = http://192.168.178.101:5000/
+synods218plus[icon] = synods218plus
+synods218plus[title] = Syno DS 218+
+synods218plus[subtitle] = 192.168.178.101
+
+synods214play[friendly_name] = Syno DS 214play
+synods214play[link] = http://192.168.178.100:5000/
+synods214play[icon] = synods214play
+synods214play[title] = Syno DS 214play
+synods214play[subtitle] = 192.168.178.100
+
+router[friendly_name] = Sagem F@st 3890V3 router
+router[link] = http://192.168.178.1/
+router[icon] = sagemrouter
+router[title] = Sagem F@st 3890V3 router
+router[subtitle] = 192.168.178.1

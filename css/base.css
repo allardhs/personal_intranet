@@ -1,0 +1,58 @@
+.is-48x48 img {
+	border-radius: 5px;
+}
+.box {
+	background-color: #ffffffd0;
+}
+.card {
+	margin-bottom: 25px;
+	background-color: #ffffffa0;
+}
+.card-image {
+	box-shadow: inset 0 0 2px 2px #fff;
+	min-height: 239px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: top;
+}
+.card-content:hover {
+	transform: scale(1.1);
+	background-color: white;
+	box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.15 );
+	cursor: pointer;
+}
+.bg_image {
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	filter: blur(8px) contrast(0.2) brightness(1.8);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.week-list {
+	color: #8b8b8b;
+}
+.week-list > li {
+	float: left;
+	text-align: center;
+	width: 16%;
+	transition: 200ms ease;
+	border-radius: 10px;
+}
+.week-list > li:hover {
+	transform: scale(1.3);
+	box-shadow: 0 0 20px 0 rgba( 0, 0, 0, 0.15 );
+}
+.week-list > li.active {
+	background: #f3f3ed80;
+	color: black;
+}
+.week-list > li .day-temp {
+	display: block;
+}
+.week-list > li .day-day {
+	display: block;
+	font-size: 10px;
+}
