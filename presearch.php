@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<?php
-	ini_set( 'display_errors', 1 );
-	ini_set( 'display_startup_errors', 1 );
-	error_reporting( E_ALL );
-?>
-
 <html><head>
 	
 	<?php
-		require( "../helpers.php" );
+		
+		require_once './settings.inc.php' ;
+		require_once './helpers.php' ;
+		
 		echo showHeader( "Presearch" );
 		echo showHeader_jquery();
 		echo showHeader_jsonviewer();
-	?>
-	
-	<?php
 		
 		$file_load = file_get_contents( $presearch_files_path_file );
 		$presearch_results = json_decode( $file_load, true );
@@ -150,10 +144,8 @@
 		</div>
 	</section>
 	
-	<div class='column'>
-		<pre id='json'></pre>
-	</div>
-	
+	<pre><?php echo $presearch_files_path_file . " [" . date( "d F Y H:i:s", filemtime( $presearch_files_path_file ) ) . "]"; ?></pre>
+	<pre id='json'></pre>
 	<script>
 		var jsonViewer = new JSONViewer();
 		document.querySelector('#json').appendChild(jsonViewer.getContainer());

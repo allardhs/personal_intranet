@@ -23,24 +23,24 @@
 		
 		define( 'HASS_VERSION', $homeassistant_version );
 		
-		define( 'CRYPTO_PORTFOLIO_BALANCE', "€ " . number_format( $crypto_portfolio[ 'totals'], 2 ) . "<br>Last sync: <i>xxx</i>");
-		define( 'PRESEARCH_BALANCE', "₱ " . number_format( $presearch_results[ 'total'], 2 ) . "<br>Last sync: <i>xxx</i>" );
+		define( 'CRYPTO_PORTFOLIO_BALANCE', "€ " . number_format( $crypto_portfolio[ 'totals'], 2 ) . "<br><span style='font-size:11px;'>Last sync: <i>" . date( "d F Y H:i", filemtime( $crypto_portfolio_files_path_file ) ) . "</span></i>");
+		define( 'PRESEARCH_BALANCE', "₱ " . number_format( $presearch_results[ 'total'], 2 ) . "<br><span style='font-size:11px;'>Last sync: <i>" . date( "d F Y H:i", filemtime( $presearch_files_path_file ) ) . "</span></i>" );
 		
 		define( 'SENTIMENT_SCORE', "<i>Fear vs. Greed:</i> " . number_format( $sentiment_data[ 'augmentio.ai' ], 0 ) . "% - " . number_format( $sentiment_data[ 'alternative.me' ] * 100, 0 ) . "%" );
 		
-		define( 'COINBASE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'coinbase'], 2 ) );
-		define( 'CRYPTO_COM_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com'], 2 ) );
-		define( 'CRYPTO_COM_WALLET_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com_wallet'], 2 ) );
-		define( 'CRYPTO_COM_EXCHANGE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com_exchange'], 2 ) );
-		define( 'KRAKEN_BALANCE', "€ " . number_format( $value_on_exchanges[ 'kraken'], 2 ) );
-		define( 'BITPANDA_BALANCE', "€ " . number_format( $value_on_exchanges[ 'bitpanda_regular'], 2 ) );
-		define( 'BITPANDA_EXCHANGE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'bitpanda'], 2 ) );
-		define( 'BINANCE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'binance'], 2 ) );
-		define( 'GATE_IO_BALANCE', "€ " . number_format( $value_on_exchanges[ 'gateio'], 2 ) );
-		define( 'LYKKE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'lykke'], 2 ) );
-		define( 'WHITEBIT_BALANCE', "€ " . number_format( $value_on_exchanges[ 'whitebit'], 2 ) );
+		define( 'COINBASE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'coinbase'] ?? 0, 2 ) );
+		define( 'CRYPTO_COM_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com'] ?? 0, 2 ) );
+		define( 'CRYPTO_COM_WALLET_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com_wallet'] ?? 0, 2 ) );
+		define( 'CRYPTO_COM_EXCHANGE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'crypto_com_exchange'] ?? 0, 2 ) );
+		define( 'KRAKEN_BALANCE', "€ " . number_format( $value_on_exchanges[ 'kraken'] ?? 0, 2 ) );
+		define( 'BITPANDA_BALANCE', "€ " . number_format( $value_on_exchanges[ 'bitpanda_regular'] ?? 0, 2 ) );
+		define( 'BITPANDA_EXCHANGE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'bitpanda'] ?? 0, 2 ) );
+		define( 'BINANCE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'binance'] ?? 0, 2 ) );
+		define( 'GATE_IO_BALANCE', "€ " . number_format( $value_on_exchanges[ 'gateio'] ?? 0, 2 ) );
+		define( 'LYKKE_BALANCE', "€ " . number_format( $value_on_exchanges[ 'lykke'] ?? 0, 2 ) );
+		define( 'WHITEBIT_BALANCE', "€ " . number_format( $value_on_exchanges[ 'whitebit'] ?? 0, 2 ) );
 		
-		define( 'BANK_BALANCE', "€ " . number_format( sum_all_bank_amount(), 2 ) . "<br>Last sync: <i>xxx</i>" );
+		define( 'BANK_BALANCE', "€ " . number_format( sum_all_bank_amount(), 2 ) . "<br><span style='font-size:11px;'>Last sync: <i>" . date( "d F Y H:i", filemtime( $bankrekeningen_files_path_file ) ) . "</span></i>" );
 		define( 'BIEN_BALANCE', "€ " . number_format( sum_bank_amount( "BIEN_SPAREBANK_BIENNOK1" ), 2 ) . " [kr " . number_format( sum_bank_amount( "BIEN_SPAREBANK_BIENNOK1", False ), 2 ) . "]" );
 		define( 'ING_BALANCE', "€ " . number_format( sum_bank_amount( "ING_INGBNL2A" ), 2 ) );
 		define( 'REVOLUT_BALANCE', "€ " . number_format( sum_bank_amount( "REVOLUT_REVOGB21" ), 2 ) );

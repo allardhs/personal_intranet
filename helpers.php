@@ -343,17 +343,20 @@ function load_sentiment_file() {
 function show_weather_widget( $conditions_icons, $weather ) {
 	return "
 		<ul class='week-list'>
-			<li class='active' title='vandaag'><i class='fa-solid fa-" .  $conditions_icons[ $weather['today']['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['today']['temperature'],0,'.','') . "°</span></i><span class='day-day'>" .  date( 'D', strtotime( 'today' ) ) . "</span></li>
-			<li title='morgen'><i class='fa-solid fa-" .  $conditions_icons[ $weather['forecast'][0]['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][0]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+1 Day' ) ) . "</span></li>
-			<li title='overmorgen'><i class='fa-solid fa-" .  $conditions_icons[ $weather['forecast'][1]['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][1]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+2 Day' ) ) . "</span></li>
-			<li title='vandaag + 3'><i class='fa-solid fa-" .  $conditions_icons[ $weather['forecast'][2]['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][2]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+3 Day' ) ) . "</span></li>
-			<li title='vandaag + 4'><i class='fa-solid fa-" .  $conditions_icons[ $weather['forecast'][3]['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][3]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+4 Day' ) ) . "</span></li>
-			<li title='vandaag + 5'><i class='fa-solid fa-" .  $conditions_icons[ $weather['forecast'][4]['condition'] ] . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][4]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+5 Day' ) ) . "</span></li>
+			<li class='active' title='vandaag'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['today']['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['today']['temperature'],0,'.','') . "°</span></i><span class='day-day'>" .  date( 'D', strtotime( 'today' ) ) . "</span></li>
+			<li title='morgen'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['forecast'][0]['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][0]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+1 Day' ) ) . "</span></li>
+			<li title='overmorgen'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['forecast'][1]['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][1]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+2 Day' ) ) . "</span></li>
+			<li title='vandaag + 3'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['forecast'][2]['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][2]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+3 Day' ) ) . "</span></li>
+			<li title='vandaag + 4'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['forecast'][3]['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][3]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+4 Day' ) ) . "</span></li>
+			<li title='vandaag + 5'><i class='fa-solid fa-" . ( $conditions_icons[ $weather['forecast'][4]['condition'] ] ?? "question" ) . "'></i><span class='day-temp'>" .  number_format($weather['forecast'][4]['temperature'],0,'.','') . "°</span><span class='day-day'>" .  date( 'D', strtotime( '+5 Day' ) ) . "</span></li>
 		</ul>
 	";
 }
 function sum_bank_amount( $bankid, $convert_to_eur = True ) {
 	$sum = 0;
+	if( !isset( $GLOBALS[ "bankrekeningen_portfolio" ][ $bankid ] ) ) {
+		return 0;
+	}
 	foreach( $GLOBALS[ "bankrekeningen_portfolio" ][ $bankid ][ 'accounts' ] as $account_key => $account_data ) {
 		if( $convert_to_eur ) {
 			$sum += floatval( $account_data[ 'balance' ] ) * floatval( $account_data[ 'currency_to_EUR' ] );
@@ -394,15 +397,10 @@ function highlight_array( $array, $name = 'var' ) {
 function get_crypto_portfolio_status() {
 	
 	$crypto_portfolio = json_decode( file_get_contents( $GLOBALS["crypto_portfolio_files_path_file"] ), true );
-
+	
 	$presearch_results = json_decode( file_get_contents( $GLOBALS["presearch_files_path_file"] ), true );
-
-	$value_on_exchanges = array(
-		'coinbase' => 0, 'coinbasepro' => 0,
-		'crypto_com' => 0, 'crypto_com_wallet' => 0, 'crypto_com_exchange' => 0,
-		'bitpanda_regular' => 0, 'bitpanda' => 0,
-		'kraken' => 0, 'binance' => 0, 'gateio' => 0, 'lykke' => 0, 'whitebit' => 0,
-	);
+	
+	$value_on_exchanges = array();
 	foreach( $crypto_portfolio[ 'crypto' ] as $coin => $coin_data  ) {
 		foreach( $coin_data[ 'on_exchange' ] as $exchange => $value_of_coins_on_exchange ) {
 			if( !isset( $value_on_exchanges[ $exchange ] ) ) {
